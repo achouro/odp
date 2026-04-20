@@ -1,0 +1,14 @@
+ul{ 
+  max-width:750px;
+  margin: 50px auto;
+  padding: 0;
+  display:flex;
+  flex-wrap:wrap;}
+li{
+  height:100px;
+  width:100px;
+  list-style-type:none;
+  color:white;
+  background:blue;
+  border: 2px solid white
+  gap: 10px;}

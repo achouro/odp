@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    
+    <style>
+      li {margin-bottom: 10px;}
+      li button {font-size: 12px; margin-left: 20px;color: #666;}
+    </style>
+    
+  <style type="text/css" id="operaUserStyle"></style></head>
+
+  
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <form>
+      <label for="item">Enter a new item:</label>
+      <input type="text" id="item" name="item">
+      <button>Add item</button>
+
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+      input=document.querySelector("input#item")
+      button=document.querySelector("button")
+      list=document.querySelector("ul")
+
+      function add_to_list(){
+        
+        event.preventDefault()
+        
+        const to_add= input.value
+        input.value="";
+
+        list_item=document.createElement("li")
+        list_span=document.createElement("span")
+        list_button=document.createElement("button")
+
+        
+        list_item.appendChild(list_span)
+        list_span.textContent=to_add
+        
+        list_button.textContent="Delete"
+        list_item.appendChild(list_button)
+
+        list.appendChild(list_item)
+
+        list_button.addEventListener("click", 
+                                     ()=> console.log(list_item.previousElementSibling);  
+                                       list.removeChild(list_item)) 
+
+        input.focus();
+      }
+
+      button.addEventListener("click", add_to_list )
+
+    </script>
+  
+</body></html>

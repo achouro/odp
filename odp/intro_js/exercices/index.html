@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<script>
+//ex6: repeat three times
+function repeat_string(str,num){
+    rep=[]
+    for(i=0; i<num;i++){
+        rep.push(str);
+    }
+    return rep.join("");
+} 
+string='boby'
+//console.log(repeat_string(string,3))
+
+//ex7 reverse
+function reverse_string(str){
+    rev=[]
+    for(let i=0; i<str.length;i++){
+        
+        rev.push(str.charAt(str.length -1 -i));
+        }
+    return rev.join("");
+} 
+string='lolla'
+//console.log(reverse_string(string))  
+
+//ex8 remove
+function remove_from(array,element){
+    ret=[]
+    for(let i=0; i<array.length;i++){
+        if(array[i]===element){continue;}
+        ret.push(array[i]);
+        }
+    return ret;
+} 
+arr=['lolla', 'boby', 'jj' ]
+//console.log(remove_from(arr,'jj'))
+    
+//ex9 sum
+function sum_all(a, b){
+    var summer=0
+    for(let i=a; i<=b;i++){
+        summer+= i; 
+        
+    }
+    return summer;
+}
+//console.log(sum_all(1,10)) 
+
+//ex10 is_leap_year
+function is_leap_year(annum){
+    
+    if(annum%4 === 0 && (annum%100!==0 || annum%400===0)) {return true; } 
+    
+    else {return false};
+}
+//console.log(is_leap_year(1200))
+
+//ex11 temp conversion
+    
+function convert_to_fahrenheit(fahren){
+    return Math.round((fahren-32)/1.8,2);
+}
+console.log(convert_to_fahrenheit(100))
+
+function convert_to_celcius(cel){
+    return Math.round(cel*1.8 + 32 ,2);
+}
+console.log(convert_to_celcius(20))
+
+</script>
+
+</html>

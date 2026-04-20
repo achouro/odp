@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Custom Event</h1>
+  <p><a class="note">Custom event domonstration</a></p>
+  <p><a class="knot">Another custom event domonstration</a></p>
+
+<script>
+//for note class
+function highlight(element,callback){
+  element.style.backgroundColor="yellow";
+  
+  if(callback && typeof callback==='function'){ 
+    callback(element)} 
+  }
+function circleit(element){ element.style.border= "solid 2px purple";}
+  
+note=document.querySelector(".note")
+highlight(note, circleit)
+
+//for knot class
+function highlight_(element){
+  
+  const background_color="yellow";
+  element.style.backgroundColor=background_color;
+
+  let event= new CustomEvent("custom",{ 
+                          detail: {backgroundColor: background_color} })
+
+  element.dispatchEvent(event)
+}
+
+function borderit(element){ element.style.border= "solid 2px purple";}
+
+
+let knot= document.querySelector(".knot") 
+
+knot.addEventListener("custom", function(e){borderit(this);})
+
+highlight_(knot)
+  
+  
+
+</script>
+</body>
+
+</html>

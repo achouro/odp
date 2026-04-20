@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Dispatch Event</h1>
+  <p><a></a></p>
+  <h3></h3>
+  <input type="text" class="entry">
+  <button class="btn">Press here</button>
+
+<script>
+  const para=document.querySelector("a")
+  const btn=document.querySelector(".btn")
+
+  btn.addEventListener("click", ()=> alert("Button Clicked"))
+
+  //let click_event= new Event("click");
+  let click_event= new MouseEvent("click", 
+                                  {bubbles: true,cancelable: true,
+                                    clientX: 150,clientY: 150})
+  btn.dispatchEvent(click_event)
+
+  //btn.addEventListener("click", ()=> alert("Button Clicked"))
+  
+  console.log(click_event.isTrusted)
+
+</script>
+</body>
+
+</html>
