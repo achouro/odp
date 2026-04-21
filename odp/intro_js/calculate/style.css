@@ -33,6 +33,7 @@ h1,h3{text-align:center; }
         width:40vw;
         font-size:40px;
         display:flex; align-items:center; justify-content:space-between;
+        padding-right: 2vw;
        } 
 
 .input{width:30vw;display:flex; justify-content:right;}
