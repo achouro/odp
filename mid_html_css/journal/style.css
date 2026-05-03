@@ -1,0 +1,162 @@
+body{
+  display:flex; justify-content:center;
+}
+
+.container {
+  display:grid; 
+  grid-template-columns: 20vw 79vw; 
+  grid-template-rows: 9vh 6vh 75vh 7vh; 
+  gap: 0.3vw;
+  grid-template-areas: "header header" "sidebar nav" "sidebar article" "footer footer";
+  text-align: center;
+}
+
+.container div {
+  padding: 15px;
+  font-size: 32px;
+  font-family: Helvetica;
+  font-weight: bold;
+  color: white;
+}
+
+.header {
+  background-color: #393f4d;
+  grid-area:header;
+
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items: center;
+}
+.header .logo{ font-size: 1.3rem; width: }
+.header .menu{ display:flex; flex-direction: row;  }
+
+.menu ul, .nav ul {
+ font-size:16px;
+  list-style-type: none;
+
+  display:flex; flex-direction: row; justify-content: center; align-items: center; }
+
+.menu ul{
+font-size: 0.7rem;
+  gap:1rem;
+}
+.nav {
+  background-color: #C50208;
+  grid-area: nav;
+  display:flex; align-items: center; justify-content: center;
+  
+}
+
+.nav ul{
+font-size: 0.7rem;
+  gap: 20vw;
+  margin:0;
+  padding:0;
+
+
+
+}
+
+
+.sidebar {
+  background-color: #C50208;
+  grid-area:sidebar;
+  display:grid;
+  gap: 3vh;
+ 
+}
+.sidebar>div{
+    display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .photo {
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: normal;
+  border-radius: 10px;
+  
+}
+
+.sidebar .side-content {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: normal;
+  
+  border-radius: 10px;
+}
+
+.article {
+
+  background-color: #bccbde;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,1fr);
+
+  padding: 0;
+  gap:1.5vw 1.5vh;
+
+}
+
+.article .card{
+    overflow: hidden;
+
+}
+
+.card .title{
+    font-size: 0.7rem;
+    padding:0;
+    margin:0;
+}
+.card :nth-child(2){
+    font-size: 0.56rem;
+}
+
+.nav ul li {
+  text-transform: uppercase;
+}
+
+
+
+.article p {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: white;
+  text-align: left;
+}
+
+.article .card {
+  background-color: #FFFFFF;
+  color: black;
+  text-align: center;
+}
+
+.card p {
+  color: black;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.card .title {
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer {
+  background-color: #393f4d;
+  grid-area:footer;
+  display:flex; align-items: center; justify-content: center;
+
+
+}
+
+.footer p {
+  font-size: 13px;
+  font-weight: normal;
+
+}
+

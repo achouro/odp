@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PIZZA SELECTION</h1>
+    <h4>Welcome to our Pizzaiolo shop! </h4>
+    <p>Please enter your selection below for delivery.</p>
+    <form>
+        <input type="hidden" id="timestamp" name="timestamp">
+        <fieldset>
+            <legend>Order details</legend>
+            <label for="order">Please select delivery method:</label>
+
+            <div class="delivery" style="display:flex">
+                <div>
+                <input type="radio" id="eatin" name="order" value="eatin">
+                <label for="eatin">Eat-in</label>
+                </div>
+                <div>
+                <input type="radio" id="takeaway" name="order" value="takeaway">
+                <label for="takeaway">Take-away</label>
+                </div>
+                <div>
+                <input type="radio" id="collect" name="order" value="collect">
+                <label for="collect">Collect</label>
+                </div>
+            </div>
+            <br>
+
+            <div class="toppings">
+                <label for="toppings">Please select your toppings:</label>
+                <div>
+                    <input type="checkbox" id="onions" name="topping" value="onions">
+                    <label for="onions">Onions</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="pepper" name="topping" value="pepper">
+                    <label for="pepper">Pepper</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="mushrooms" name="topping" value="mushrooms">
+                    <label for="mushrooms">Mushrooms</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="chicken" name="topping" value="chicken">
+                    <label for="chicken">Chicken</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="beef" name="topping" value="beef">
+                    <label for="beef">Beef</label>
+                </div> 
+            </div>
+            <br>
+            <div class="special">
+                <label for="special">Special instructions or allergies:</label>
+                <br>
+                <textarea rows="4" cols="30" placeholder="No sauce"></textarea>
+            </div>
+        </fieldset>
+        <br>
+    
+    <fieldset>
+        <legend>Contact Details</legend>
+        <div class="details">
+            <div>
+                <label for="phone">Enter your phone number:</label>
+                <br>
+                <input type="text">
+            </div>
+            <br>
+            <div>
+                <label for="address">Enter your address:</label>
+                <br>
+                <textarea rows="3" cols="30" placeholder="221b, Baker St, London, NW1 6XE"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="time">Select delivery date:</label>
+                <br>
+                <input type="date"></input>
+                <input type="time"></input>
+            </div>
+
+        </div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend class="payment">Payment details</legend>
+        <div class="name">
+            <label for="name">Name on card:</label>
+            <br>
+            <input type="text">
+        </div>
+        
+        <div class="card">
+            <label for="card">Card number:</label>
+            <br>
+            <input type="password">
+        </div>
+        <div class="expiry">
+            <label for="expiry">Expiration date:</label>
+            <br>
+            <input type="month">
+        </div>
+        <div class="cvv">
+            <label for="cvv">CVV:</label>
+            <br>
+            <input type="number">
+        </div>
+                        
+    </fieldset>
+
+    <br>
+    <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </div>
+    <br>
+    
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.container{
+    
+    display:grid;
+    grid-template-columns: 25vw 70vw;
+    
+    grid-template-rows:10vh 10vh 50vh 10vh;
+    grid-auto-rows: 10vh;
+
+
+    gap:1vw 1vh;
+    grid-template-areas:"head head" 
+                        "sidebar nav" 
+                        "sidebar article" 
+                        "footer footer";
+}
+
+.head{ grid-area: head; background-color: rgb(52, 72, 189);}
+.sidebar{ grid-area: sidebar; background-color: blueviolet;}
+.nav{ grid-area: nav; background-color: rgb(86, 39, 204);}
+.article{ grid-area: article; background-color: rgb(26, 126, 46);
+          }
+
+.footer{ grid-area: footer; background-color: rgb(71, 66, 89);}
+
+.item{text-align: center; padding-top:3vh;  
+    color:white; font-family:Helvetica;   
+    border-radius: 0.3rem;}
+
+p{font-size:66%; }
+
+
+

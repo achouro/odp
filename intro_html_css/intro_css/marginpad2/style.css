@@ -1,0 +1,13 @@
+body{margin:20px auto; background:lightgrey;}
+
+.card{width: 600px;  margin:30px auto; padding: 20px; background:white; }
+
+.title, .content, .button-container{font-family: Helvetica "Times New Roman" sans-serif; margin:20px auto;padding:30px; background:lightblue;}
+
+.title{font-size:28px; font-weight:500; padding: 20px 20px;}
+
+.content{font-size: 18px;padding: 40px 20px;}
+
+.button-container{ text-align:center; padding: 100px auto;}
+
+.botton-container.button{display:block; margin: 0px auto;}

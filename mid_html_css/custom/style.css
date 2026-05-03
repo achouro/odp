@@ -1,0 +1,50 @@
+
+/*:root{*/
+:root.light{
+  --color-button-background: rgb(240, 240, 240);
+  --color-button-border: 1px solid rgb(40, 40, 40); 
+  --color-base-background:rgb(240,240,240);
+  --color-base-text:rgb(40,40,40);
+}
+
+/*Use commented out to change to browser-led choice of background
+/*@media (prefers-color-scheme:dark)*/
+:root.dark{
+  --color-button-background: rgb(40, 40, 40);
+  --color-button-border: 1px solid rgb(240, 240, 240); 
+  --color-base-background:rgb(40,40,40);
+  --color-base-text:rgb(240,240,240);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+body{
+  padding: 10px;
+  color: var(--color-base-text);
+  background-color: var(--color-base-background);
+}
+
+
+.theme-toggle {
+  color: var(--color-base-text);
+  background-color: var(--color-button-background);
+  border: var(--color-button-border);
+  font-size: 1.125rem;
+  padding: 10px 20px;
+}
+
+.theme-toggle:focus {
+  outline: var(--color-button-border);
+}
+
+.theme-toggle:hover {
+  cursor: pointer;
+}

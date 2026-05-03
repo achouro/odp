@@ -1,0 +1,91 @@
+body{margin: 100px 100px; 
+     dipslay:flex; align-items:center; justify-content:center;}
+
+h1,h3{text-align:center; }
+
+.whole, .screen,.entries, .operational{
+        
+        border: 0.1vh black solid;
+        margin: 3vh auto;
+        border-radius: 2vh;
+}
+
+
+.whole {
+        max-width:50vw; height:50vh;
+       text-align:center;
+       background-color: lightgrey;
+      dipslay:flex; flex-direction: column; align-items:center; justify-content:center;}
+
+
+.screen, .entries,.functional, .operational{
+        max-width:40vw;
+        
+        
+}
+
+.entries,.functional, .operational{
+        margin:0px auto;
+}
+
+
+.screen{height:10vh; background-color:white;
+        width:40vw;
+        font-size:40px;
+        display:flex; align-items:center; justify-content:space-between;
+        padding-right: 2vw;
+       } 
+
+.input{width:30vw;display:flex; justify-content:right;}
+
+.reset{padding: 1vh 1vw; text-align:center;
+        max-heigth: 5vh;
+        max-width: 5vw;
+       font-weight:bold; font-size:16px;
+       background: #f26a6a;
+        border:0.1vh black solid; border-radius:50%;
+        margin: 0.1vw auto;
+        padding: 3vw auto;}
+
+
+.entries{ height: 30vh;} 
+
+.functional{ height: 0vh; }
+
+.operational{height:30vh; 
+             dipslay:flex; flex-direction: row;
+             } 
+
+
+.numbers, .operators { 
+                     margin: 0vh 0vw;
+                padding: 1vh 2vw;
+                border-radius:1.5vh;
+                }
+
+.numbers {width:30vw;
+        display:flex; flex-wrap:wrap; gap:10px; 
+         align-items:center;         
+}
+.operators{width:10vw;
+        display:flex;  flex-wrap:wrap; gap:10px;
+          align-items:center;}
+           /*flex-direction:column; align-items:center; justify-content:center;} */
+           /*flex-wrap:wrap; gap:10px;} flex-direction:column;}*/
+
+
+
+.number, .operator{width:6vw; height: 4vh; gap:1vw; 
+        flex: 1 1 auto;
+        text-align:center; font-weight:bold; font-size:16; font-family:Helvetica;
+        display:flex; flex-align: center; justify-content: center; align-items:center;
+        border: 0.1vh black solid;
+        border-radius: 1.5vh;
+        background-color: #80808057;}
+
+.operator{background-color: #ffc107a8;
+         font-size: 20px;}
+
+#equal{background-color: #f0f00fc4;}
+
+

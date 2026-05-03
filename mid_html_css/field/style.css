@@ -1,0 +1,38 @@
+@font-face{
+    font-family:"Texas Tango" ;
+    src:url('fonts/texas-tango.otf')}
+
+body{display:flex; flex-direction:column; align-items:center; justify-content: center;
+    background:rgba(87, 128, 25, 0.548)}
+
+h2{color:#42424e;
+    font-family:'Texas Tango' ;}
+.whole{
+    resize: both;
+    overflow:auto;
+    margin-top:0vh;
+    display: grid;
+        width: clamp(100px, 80vw, 800px);
+        height: clamp(100px, 80vh, 800px);
+        grid-template-columns: repeat(auto-fit,clamp(25px,20vw,200px));
+        grid-template-rows: repeat(4,clamp(25px,20vh,200px));
+    background-color: rgb(165, 95, 42);
+        border:1px rgb(0, 0, 0) solid;
+        border-radius: 1vw;}
+
+.parcel{
+    border:1px rgb(0, 0, 0) solid;
+    border-radius: 0.4vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: "background.png";
+}
+img{ width: clamp(8px,min(6vw,6vh),60px); }
+
+.parcel{display:grid; 
+        align-items:center;
+        justify-content:center;
+        grid-template-columns: 6vw 6vw 6vw;
+        grid-template-rows: 6vh 6vh 6vh;
+            }

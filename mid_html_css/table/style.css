@@ -1,0 +1,20 @@
+table{text-align:center;
+    border-collapse: collapse;
+    border:1px rgb(197, 190, 190) solid;"}
+
+tr{border:1px solid black;}
+
+th, .Location{background:#eee;}
+th,td{ border:1px solid ; padding:20px 10px; }
+
+td:hover{background: #c5c3c3;}
+
+.Name{border:2px solid black;}
+.Breed{background-color:white;}
+.Pattern{width: 20vw;} 
+  
+.BlackWhite{background:linear-gradient(to left, white 50%, rgba(0, 0, 0, 0.637) 50%)}
+.LightBrown{background-color: #a5622aa6;}
+.DarkBrown{background-color: #6a1d1dbf;}
+.BlueGrey{background-color:#c4c4d0}
+

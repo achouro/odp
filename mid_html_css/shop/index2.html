@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to our shop:</h1>
+    <p style="font-weight: 600;">Please enter your item of choice to set up delivery:</p>
+    <form method="post">
+    <div>
+            <label for="ID">Enter your ID:</label>
+            <input type="text" id="ID" name="ID">
+    </div> 
+    <div>
+            <label for="item">Enter item name:</label>
+            <input type="text" id="item" name="item">
+        </div>
+        <div>
+            <label for="quantity">Enter quantity :</label>
+            <input type="number" id="quantity" name="quantity">
+        </div>
+
+        <div>
+            <label for="date">Enter delivery date:</label>
+            <input type="date" id="date" name="date"></input>
+        </div>
+        <br>
+        <div>
+            <label for="details">Specific requests:</label>
+            <br/>
+            <textarea id="details" rows="10" cols="15" placeholder="Leave a comment for extra details."></textarea>
+        </div>
+        <br>
+        <button type="submit" class="button">Send request</button>
+    </form>
+    <br>
+    <div class="message"></div>
+    <script src="script2.js"></script>
+
+</body>
+</html>

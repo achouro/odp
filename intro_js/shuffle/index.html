@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<script>
+let arr = [1, 2, 3, 4, 5,6 ]
+
+
+function shuffle(arrayin){
+    
+    var array= arrayin.slice()
+    
+    for(i=0;i < array.length; i++){
+        //pick random item in a list
+        const rand= Math.floor(Math.random()*(array.length))
+        
+        //swap with ith element
+        temp=array[i];
+        array[i]= array[rand];
+        array[rand]=temp;
+        temp=null;
+    }
+    
+    return array
+}
+//console.log(shuffle(arr)) 
+
+let count={"1":0, "2":0,"3":0,"4":0,"5":0,"6":0 }
+let counts=[0,0,0,0,0,0]
+for(let i=0; i<10; i++){
+    const shuffled=shuffle(arr)
+    console.log(shuffled)
+    
+    counts[shuffled[0]-1] += 1;  
+}
+for(let i=0; i<counts.length -1; i++){
+    console.log(`${i+1} appears ${counts[i]} times as first draw`)
+}
+
+let arrr = [1, 2, 3, 4, 5, 6]
+    
+function shuffle_sort(array){ 
+    return array.sort(()=> Math.random() - 0.5);
+}
+//console.log(shuffle_sort(arrr))
+
+
+
+</script>
+</html>

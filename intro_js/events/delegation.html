@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Keyboard Events: Key/Code</title>
+</head>
+<body>
+    <ul id="menu">
+        <li><a id="home">Home</a></li>
+        <li><a id="dashboard">Dashboard</a></li>
+        <li><a id="report">Report</a></li>
+    </ul>
+    
+</body>
+<script>
+    let menu=document.getElementById("menu")
+    menu.addEventListener("click",function(event){
+        let target=event.target 
+
+        switch(target.id){
+            case "home": console.log("Welcome home!"); break;
+            case "dashboard": console.log("Open Dashboard"); break;
+            case "report": console.log("Read report!"); break;
+        }
+    })
+</script>
+</html>

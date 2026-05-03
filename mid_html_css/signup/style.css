@@ -1,0 +1,56 @@
+
+body{display:flex; flex-direction:row; justify-content:center; 
+    margin:0 auto;
+     ;}
+
+.image{width: 40vw; height:100vh;
+    position:relative;
+    display:inline-block;  }
+
+.image::hover .credit{position:absolute; color:rgb(red, green, blue, 0.5)}
+
+.image img{display:block;
+        width:40vw; height:100vh;
+     }
+.intro{display:flex; padding:0vh 5vw;}
+h1, .welcome{text-align: center;}
+
+h1{font-size: 2.7rem;
+    color:rgb(94, 119, 94);
+    font-family: 'Science Gothic','Audiowide','Rubik Spray Paint','Playwrite DE SAS','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+}
+p{text-align: center;}
+label,p,.buttons{font-size: 0.9rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+
+
+.page{display:flex; flex-direction:column; justify-content: center; 
+    align-items:center; gap: 5vh;
+    background-color: rgb(255, 255, 255)}
+    
+.form{display:flex; flex-wrap:wrap; align-items:center; justify-content: center;
+      margin: 0 auto; padding:5vh 0; gap: 3vw;
+     box-shadow: 3px 3px rgb(247, 243, 243); background-color: rgb(244, 247, 244);}
+
+.item{
+    flex:0 0 33% box-sizing:border-box;}
+
+label{color:rgb(133, 128, 128);
+    font-size: 0.7rem;
+    
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+      text-transform:uppercase;}
+
+input{max-width:25vw; min-width:20vw; height: 3vh;
+    }
+
+.buttons, .intro{display:flex; flex-direction:column; justify-content: center; 
+    align-items:center; backgroud-color:white;}
+
+a, button{cursor:pointer;}
+a{color:green;; text-decoration:underline}
+button{ color:white; background-color:rgb(30, 134, 30);); padding:1vh 1vw; border-radius:1.5vh; }
+
+
+input[type="password"]::invalid{border: red;}

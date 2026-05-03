@@ -1,0 +1,29 @@
+<!doctype html>
+<script>
+
+  
+function camelize(str){
+  if(str==0){return str;}
+  
+  return str.split("-")
+            .map((item,index)=>  index==0 ? item : item.charAt(0).toUpperCase() + item.slice(1) )
+            .join("")
+}
+    
+  /*
+function camelize(str){
+  if(str==0){return str;}
+  let splites=str.split("-")
+  rest= splites.slice(1).map(item => item.charAt(0).toUpperCase() + item.slice(1) )
+  rest=rest.join("") 
+  joined= [splites[0],rest].join("")
+  
+  
+  return joined
+}
+*/
+console.log( camelize("background-color-and-other-parameters"))
+
+</script>
+
+</html>

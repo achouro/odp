@@ -1,0 +1,4 @@
+.container{max-width:200px; margin:auto;}
+.svg-circle:hover + .svg-text-group{opacity:0;}
+
+.container:hover circle, container:focus-visible circle{r:30px; cy:50px;}
