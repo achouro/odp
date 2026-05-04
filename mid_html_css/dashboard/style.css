@@ -64,8 +64,8 @@ li { display:flex; flex-direction:row; align-items: center;
 }
 
 .nav img{
-    width:1.5rem;
-    height:1.5rem;
+    width:1.2rem;
+    height:1.2rem;
     /*transform: rotate(-21deg);*/
 }
 
@@ -430,7 +430,7 @@ input[type="search"]{
     99%{transform:rotate(0deg);}
 
 }
-.profile_photo .background img:hover{
+.profile_photo .background img:hover, .nav .notification img:hover{
     top:10px;
     left:2px;
     transform:scale(1.1);
