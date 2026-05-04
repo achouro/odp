@@ -64,8 +64,9 @@ li { display:flex; flex-direction:row; align-items: center;
 }
 
 .nav img{
-    width:1.2rem;
-    height:1.2rem;
+    width:1.5rem;
+    height:1.5rem;
+    /*transform: rotate(-21deg);*/
 }
 
 .nav .upper, .nav .lower{
@@ -91,8 +92,9 @@ li { display:flex; flex-direction:row; align-items: center;
 .nav{
     margin:0;
     padding-bottom: 1vh;
-    box-shadow: 0.1rem 0.1rem rgb(40, 35, 35) ;
+    box-shadow: 1px 1px 1px rgb(178, 175, 175);;
  } 
+
 
 .upper .search, .upper .links{
     display:flex; flex-direction: row; align-items: center; justify-content: center;
@@ -177,11 +179,11 @@ input[type="search"]{
     background:rgb(0, 136, 255);
     color:white;
     font-weight: 600;
-    font-size: 0.8em;
+    font-size: 0.7em;
     margin:0 auto;
     text-align: center;
     cursor: pointer;
-    padding:;
+    padding:0;
 
 
 
@@ -242,6 +244,7 @@ input[type="search"]{
     border-radius:1vh;
     overflow:hidden;
     position:relative;
+    box-shadow: 1px 1px 1px rgb(178, 175, 175);
     
 
 }
@@ -258,7 +261,7 @@ input[type="search"]{
 }
 .card h4{
     grid-area: title;
-    margin:0; padding:0; font-size: 0.7rem;
+    margin:0; padding:0; font-size: 0.7rem; font-weight:500;
     line-height: 2vh;
     overflow: hidden;}
 
@@ -299,6 +302,7 @@ input[type="search"]{
     align-items: center;
     justify-content: center;
     line-height: 2vh;
+    box-shadow: 1px 1px 1px rgb(178, 175, 175);
  }
 
 .annoucements .whole .item{
@@ -313,13 +317,14 @@ input[type="search"]{
 }
 .annoucements .whole .item h5{
     grid-area: title;
-    margin:0; padding:0; font-size:0.7rem;
+    margin:0; padding:0; font-size:0.7rem; font-weight: 500;
     overflow: hidden;}
 
  .annoucements .whole .item p{
     grid-area:body;
-    color: rgb(104, 99, 99);
-    font: size 0.6em;rem;
+    color: rgb(150, 150, 150);
+    font-size: 0.7em;
+    
     max-width:(16vw);
     margin:0;   
     overflow: hidden; 
@@ -332,7 +337,7 @@ input[type="search"]{
     margin-top:0vh;
     padding:0;
     content:"";
-    height:0.1vh;
+    height:0.01vh;
     width:15vw;
     place-self: center;
   }
@@ -359,6 +364,7 @@ input[type="search"]{
     display:grid;
     grid-template-rows: repeat(4, 7vh);
     margin:0; padding:1vh 2vw;
+    box-shadow: 1px 1px 1px rgb(178, 175, 175);
 
     
 }
@@ -395,13 +401,40 @@ input[type="search"]{
 
 
 .trending .tags p{
-    color: rgb(104, 99, 99);
+    color: black;
     font-size:0.7rem;
     margin:0;    
+    font-weight:500;
 }
 
 .trending .tags .name{
     color:rgb(155, 150, 150);
     font-size:0.5rem;
 }
+
+.greeting .greeting:hover, .trending .tag:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.profile_photo .background:hover{
+   top:2px;
+    left:2px;
+    box-shadow: 2px 2px 2px rgb(178, 175, 175);
+}
+
+@keyframes animate{
+    0%{transform:rotate(0deg);}
+    33%{transform:rotate(-60deg);}
+    66%{transform:rotate(30deg);}
+    99%{transform:rotate(0deg);}
+
+}
+.profile_photo .background img:hover{
+    top:10px;
+    left:2px;
+    transform:scale(1.1);
+    animation:animate 0.5s ease-in-out;
+}
+
 
