@@ -216,7 +216,7 @@ input[type="search"]{
 
 
 
- .content h3{ margin:1vh auto; font-size: 0.9rem;}
+ .content h3{ margin:1vh auto; font-size: 0.8rem;}
 
  .projects{
     grid-area: projects;
@@ -225,7 +225,7 @@ input[type="search"]{
 .cards{
     display:grid;
     grid-template-columns: repeat(2,26vw);
-    grid-template-rows: repeat(3, 23vh);
+    grid-template-rows: repeat(3, 22.75vh);
     gap: 2vh ;
     
 }
@@ -285,7 +285,7 @@ input[type="search"]{
 .icons img:hover{ filter:invert(50%)}
 
 .annoucements .whole{
-    width: min(16vw, 150px);
+    max-width: 14vw;
     height: 35vh;
     border-radius: 1vh;;
     grid-area: annoucements;
@@ -294,10 +294,11 @@ input[type="search"]{
     display:grid;
     grid-template-rows: repeat(3,12vh);
     gap:1vh;
-    padding:1vh 2vw;
+    padding:2vh 3vw;
     margin:0;
     align-items: center;
     justify-content: center;
+    line-height: 2vh;
  }
 
 .annoucements .whole .item{
@@ -306,17 +307,20 @@ input[type="search"]{
     gap:0.5vh;
     grid-template-areas: "title" "body" "borderr";
     margin: 0 auto;
+    
     padding:1vh 2vw;
+    
 }
 .annoucements .whole .item h5{
     grid-area: title;
-    margin:0; padding:0; font-size:0.6rem;
+    margin:0; padding:0; font-size:0.7rem;
     overflow: hidden;}
 
  .annoucements .whole .item p{
     grid-area:body;
     color: rgb(104, 99, 99);
-    font-size:0.5rem;
+    font: size 0.6em;rem;
+    max-width:(16vw);
     margin:0;   
     overflow: hidden; 
 }
@@ -349,7 +353,7 @@ input[type="search"]{
     margin:0; padding:0;
     background:white;
     border-radius: 1vh;
-    width: min(16vw, 150px);
+    width: 16vw;
     height:27vh;
 
     display:grid;
