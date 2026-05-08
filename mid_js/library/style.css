@@ -1,0 +1,377 @@
+body{
+    display:grid;
+    grid-template-columns:0vw 100vw;
+    grid-template-rows: 10vh 85vh 5vh;
+    grid-template-areas:"sidebar nav" "sidebar content" "footer footer";
+    margin:0;
+
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(fonts/roboto.ttf);
+}
+.sidebar{ grid-area: sidebar;
+        background:rgb(122, 87, 155);
+        position:absolute;
+        top:0;
+        left:0;
+        height:95vh;
+        width:15vw;
+        transform:translateX(-100%);
+        transition: transform 0.5s ease-in-out;
+        font-size: 0.8rem;
+
+        display:flex;
+        flex-direction:column;
+        gap:3vh;
+
+}
+.sidebar .name{
+    font-size: 0.9rem;
+    overflow: hidden;
+
+}
+.sidebar.open{
+    transform: translateX(0);
+    
+}
+.sidebar img{ width :3vh; height: 3vh; filter: invert(100%);}
+
+
+.sidebar.closed{
+    transform: translateX(-100%);
+}
+
+
+ 
+
+
+.sidebar ul{
+    font-family: "Roboto";
+    color:white;
+    list-style-type: none;
+
+
+    margin:0;
+    padding:2vh 2vw;
+
+}
+.sidebar ul>div{
+
+    padding:2vh 2vw 2vh 2vw;
+
+}
+
+.sidebar button img{
+    padding-left: 0vw;
+}
+.sidebar .name{
+    white-space: nowrap;
+}
+.sidebar .id{
+    font-size:0.7rem;
+}
+
+.sidebar .id:hover{
+    text-decoration: underline;
+}
+
+.nav .name:hover{
+    text-decoration: underline;
+}
+
+.nav.open, .content.open{
+    width:84vw;
+    padding-left:0;
+    transform:translateX(15vw);}
+
+.nav.closed, .content.closed{
+    width:100vw;
+    transform:translateX(0);}
+
+
+.nav{grid-area:nav;
+    background: rgb(114, 69, 22);
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    gap:2vw;
+    padding:0 3vw;
+    
+}
+
+ .nav button img, .sidebar button img{ width: 4vh; height:4vh; filter:invert(100%)
+            }
+    
+
+.nav button, .sidebar button{
+    width: 4vh; height:4vh;
+    display: flex; justify-content: center; align-items: center;
+    padding:0; margin:0;
+    background:transparent;
+    border: transparent;
+    cursor:pointer;
+    
+
+}
+
+
+
+.nav .left, .nav .right{
+     display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    overflow:hidden;
+    gap: 2vw;
+    padding-right:5vw;
+    padding-left:5vw;
+}
+
+.profile img{width: 3vh; height:3vh; }
+
+.nav .background{ background-color: blueviolet; 
+    height: 5vh;
+    width:5vh;
+    border-radius: 5vh;
+    display:flex; align-items: center; justify-content: center;;
+}
+
+.nav{color:white;
+    font-family: "Roboto";}
+
+
+.content{grid-area:content;
+         display:grid;
+         justify-content: center;
+
+        grid-template-columns: 60vw 20vw;
+        grid-template-rows:  27vh 45vh;
+        gap:1vh 2vw;
+        grid-template-areas: "cards current" "cards new";
+        margin:0;
+        padding: 2vh 2vw; 
+        background: rgb(227, 226, 226);}
+
+.content h3{ font-size: 0.8rem; font-family: "Roboto"; overflow: hidden; white-space: nowrap;}
+
+.cards{grid-area:cards;
+        display:grid;
+
+        grid-template-columns: repeat(3, 18vw);
+        grid-template-rows: repeat(2, 30vh);
+        gap: 2vw 2vh;
+        
+
+}
+
+.card{
+
+    background:white;
+    border-radius: 1vh;
+    box-shadow: 1px 1px rgb(169, 167, 167);
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 10vh 14vh;
+    grid-template-areas: "image" "descriptions";
+
+    position:relative;
+    top:0; left:0;
+    transition: all 0.1s ease-in;
+    overflow:hidden;
+    white-space: nowrap;
+    padding:0 2vw;
+
+    
+    
+
+}
+.card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:5px;
+    height:100%;
+    background-color:rgb(164, 83, 196);
+
+}
+.card:hover{  
+    top:-2px; left:-2px;  box-shadow: 2px 2px rgb(169, 167, 167);
+}
+
+.card .image{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.card .image::after{
+    position:absolute;
+    content:"";
+    top:100%;
+    left:0%;
+
+    width:15vw;
+    border: 0.1px solid grey;
+
+}
+.card img{grid-area: image;
+        max-width: 12vw;
+        max-height:10vh;
+        
+  
+}
+
+
+.card .buttons{
+    display: flex; justify-content: right; align-items: center;
+    gap:1vw;
+}
+
+
+.card button, .new button{
+    display: flex; justify-content: center; align-items: center;
+    padding:0; margin:0;
+    background:transparent;
+    border: transparent;
+    cursor:pointer;
+}
+.card button:hover{
+    filter:invert(50%)
+}
+.card button img{
+    width:2vh;
+    height: 2vh;
+}
+.card button img .view{
+    width:3vh;
+    height: 3vh;
+}
+
+
+
+.card .descriptions{ grid-area: descriptions;
+    display:grid;
+    grid-template-columns: 6vw 8vw;
+    grid-template-rows: repeat(5, 2.5vh);
+    
+    align-items: left;
+    margin-top:2vh;
+
+    color:rgb(45, 44, 44);
+    font-family:"Roboto";
+    font-size: 0.7rem;
+   
+    }
+
+    
+.open{
+    display: hidden;
+}
+
+.current{grid-area:current;}
+
+.current .output{
+    width: 18vw;
+    height: 20vh;
+    padding:1vh 2vw;
+    background: white;
+    border-radius: 1vh;
+    box-shadow: 1px 1px rgb(230, 228, 228);
+    position:relative;
+
+    font-family: "Roboto";
+    font-size: 0.7rem;
+    display:grid;
+    grid-template-rows: "top" "middle_top" "middle_bottom" "bottom";
+
+    white-space: nowrap;
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+
+hr{
+    padding:0; margin:0 auto;;
+    width:10vw;
+    height:0.5px;
+    background-color: rgb(122, 52, 20);
+    border:rgb(122, 52, 20); 
+}
+.current .output .title{
+    font-weight:500;
+    font-size: 0.8rem;
+}
+
+
+.new{grid-area:new;
+}
+
+.new form{
+        width: 18vw;
+        height: 30vh;
+        background: white;
+        border-radius: 1vh;
+        box-shadow: 1px 1px rgb(169, 167, 167);
+        display:grid;
+
+        grid-template-rows: repeat(6, 5vh);
+        grid-template-columns: 6vw 14vw;
+        gap:0vh 1vw;
+
+        grid-template-areas: "title input_title" "author input_author" "pages input_pages" "rating input_rating" "read input_read" "submit submit";
+    }
+
+label .title{grid-area:title;}
+input #title{grid-area:input_title}
+
+label .author{grid-area:author;}
+input #author{grid-area:input_author;}
+
+label .pages{grid-area:pages;}
+input #pages{grid-area:input_pages;}
+
+label .rating{grid-area:rating;}
+input #rating{grid-area:input_rating;}
+
+label .read{grid-area:read;}
+input #read{grid-area:input_read;}
+
+
+
+form{
+    padding:2vh 2vw;
+    gap:0;
+    margin:0;
+    font-family: "Roboto";
+    font-size: 0.8rem;
+}
+form label{
+    overflow: hidden;
+    white-space: nowrap;
+}
+form input{
+    width:10vw;
+    height:1rem;
+}
+form button img{
+    height:3vh; width: 3vh;
+}
+
+
+form .buttons{
+    grid-area:submit;
+    display: flex; justify-content: center; align-items: center;
+    padding-right:3vw;
+}   
+
+
+.footer{ grid-area:footer;
+        background:rgb(112, 75, 48);
+        color:white; font-family: "Roboto"; font-size: 0.6rem;
+        display:flex; flex-direction:columnrow; justify-content: center; align-items: center;
+    }
