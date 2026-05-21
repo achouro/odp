@@ -227,7 +227,7 @@ function Controller(){
             
             win.textContent="It's a tie! Press Next!"
             win.style.visibility="visible";
-            win.style.fontSize="1rem";
+            //win.style.fontSize="1rem";
             game_active=false;
         }
         
