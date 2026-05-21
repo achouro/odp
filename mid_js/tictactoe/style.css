@@ -147,6 +147,8 @@ h1{
     width:15vw;
     visibility: hidden;
     color:yellow;
+    white-space: nowrap;
+
 }
 
 .bottom{
