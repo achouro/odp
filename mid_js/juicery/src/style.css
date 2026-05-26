@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/roboto.ttf");
+}
+
+body{
+    /*background-color:rebeccapurple;*/
+    display:grid;
+    grid-template-rows: 15vh 85vh;
+    grid-template-areas: "nav" "content";
+    font-family: "Roboto";
+}
+
+.nav{
+    grid-area:nav;
+    background-color:darkcyan;
+    display:grid;
+    
+    grid-template-columns: repeat(3,33.33vw);
+    grid-template-rows: 15vh;
+    grid-template-areas: "home menu about";
+
+    flex-direction:row;
+}
+.home, .menu, .about{
+    display:flex; text-align:center; justify-content: center; align-items: center;
+    font-size:1.2rem;
+    color:white;
+    
+}
+.home{grid-area:"home";}
+.menu{grid-area:"menu";}
+.about{grid-area:"about";}
+
+.content{
+    grid-area:content;
+    background-color:orangered;
+}
+
+.content img{
+    width:20vh;
+    height:20vh;
+    margin-top: 5vh;
+    
+}
+
+.home h1, .home h3{
+    margin:4vh auto;
+    padding:5vh auto;
+}
+.menu h1, .menu h3, .menu h4, .about h1{
+    margin:1vh auto;
+    padding:1vh auto;
+    font-size: 1.2rem;
+}
+
+.menu img{
+        width:4vh;
+    height:4vh;
+    margin-top: 0vh;
+}
+
+
+
+
+.themenu{
+    display:grid;
+    grid-template-columns: 40vw 5vw 40vw;
+    grid-template-rows: 60vh;
+    grid-template-areas: "juices add sides" ;
+    gap:2vw;
+    /*padding:2vh 2vw;*/
+}
+
+.themenu .left{
+    grid-area:juices;
+    
+}
+.themenu .right{
+    grid-area:sides;
+}
+.themenu .add{
+    grid-area:add;
+}
+.themenu .add img{
+    filter:invert(100%);
+
+}
+
+.themenu h4{
+    text-align: center;
+}
+.themenu .left, .themenu .right{
+    text-align: left;
+    max-width:40vw;
+    max-height:60vh;
+    border:2px solid white;
+    border-radius: 5vw;
+    padding:2vh 2vw;
+    margin-top:2vh;
+    white-space: nowrap;
+    overflow: hidden;
+
+
+}
+.themenu hr{
+    width:20vw;
+    border:0.5px solid white;
+
+}
+.themenu .description{
+    font-size: 0.7em;}
+
+
+.about h1{
+    margin:3vh auto;
+    padding:0vh auto;
+    font-size: 1.4rem;
+}
+.about img{
+    width:40vh;
+    height:40vh;
+    margin-top: 0 auto;
+    
+}
+
+.about .description{
+    width:50vh;
+    height:50vh;
+    display:flex; align-items: center;
+}
+
+.about .container{
+    padding:0;
+    margin:0;
+    gap:5vw;
+}
+
+
+.about .contact{
+    margin-top: 5vh;
+    white-space: pre-line;
+}
