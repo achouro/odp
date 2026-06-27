@@ -40,6 +40,7 @@ body{
 
 }
 
+
 .right_button img{
     filter:invert(100%);
 }
@@ -133,6 +134,9 @@ body{
     font-size:0.7rem;
 
     
+}
+.themenu .right .map{
+    margin-top:1vh;
 }
 
 .themenu .add{
