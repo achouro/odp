@@ -66,10 +66,11 @@ body{
 .themenu{
     display:grid;
     grid-template-columns: 40vw 5vw 40vw;
-    grid-template-rows: 60vh;
+    grid-template-rows: 70vh;
     grid-template-areas: "juices add sides" ;
     gap:2vw;
     /*padding:2vh 2vw;*/
+    margin-top:2vh;
 }
 
 .themenu .left{
@@ -93,7 +94,7 @@ body{
 .themenu .left, .themenu .right{
     text-align: left;
     max-width:40vw;
-    max-height:60vh;
+    /*max-height:60vh;*/
     border:2px solid white;
     border-radius: 5vw;
     padding:2vh 2vw;
