@@ -1,20 +1,4 @@
-# Local environment secrets (Contains your Google Maps Key)
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Dependencies (Installed fresh by Vercel during deployment)
 node_modules/
-jspm_packages/
-
-# Production build outputs 
+.env
 dist/
-build/
-.cache/
-
-# System and IDE specific files
 .DS_Store
-.vscode/
-.idea/
