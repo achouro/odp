@@ -7,7 +7,7 @@ export default function query_load(){
 
     load_html();
     
-    //set_up_map();
+    set_up_map();
 
     set_up_search();
 
