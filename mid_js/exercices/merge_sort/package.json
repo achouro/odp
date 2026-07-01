@@ -1,0 +1,12 @@
+{
+  "name": "merge_sort",
+  "version": "1.0.0",
+  "main": "merge_sort.js",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
