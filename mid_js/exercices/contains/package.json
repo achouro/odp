@@ -1,0 +1,12 @@
+{
+  "name": "contains",
+  "version": "1.0.0",
+  "main": "contains.js",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

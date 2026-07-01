@@ -1,0 +1,12 @@
+{
+  "name": "permutations",
+  "version": "1.0.0",
+  "main": "permutations.js",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

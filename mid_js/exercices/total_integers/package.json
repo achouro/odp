@@ -1,0 +1,12 @@
+{
+  "name": "total_integers",
+  "version": "1.0.0",
+  "main": "total_integers.js",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

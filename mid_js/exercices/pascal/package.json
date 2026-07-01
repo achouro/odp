@@ -1,0 +1,12 @@
+{
+  "name": "permupascaltations",
+  "version": "1.0.0",
+  "main": "pascal.js",
+  
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
