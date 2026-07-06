@@ -1,4 +1,4 @@
-import {Node, List} from './linked_list'
+import {Node, List} from './linked_list.js'
 
 
 describe('Linked list test', ()=>{
