@@ -1,0 +1,60 @@
+//Rotate right
+    //       [ Q ] 
+    //      /     \
+    //-->[ P ]   [ C ]
+    //   /   \
+    //[ A ]  [ B ] (This subtree B will change parents)
+
+//===>>
+
+    //    [ P ]
+    //   /     \
+    //[ A ]   [ Q ]
+    //       /     \
+    //    [ B ]    [ C ]
+    
+//Rotate left  
+
+    //       [ P ] 
+    //      /     \
+    // -->[ A ]   [ Q ]<--
+    //            /   \
+    //         [ B ]  [ C ]  (This subtree A will change parents)
+
+//===>>
+
+    //         [ Q ]
+    //       /      \
+    //.  [ P ]      [ C ]
+    //  /     \
+    //[ A ]   [ B ]
+
+
+
+//Left-right case convert to Left-left
+//  N1.        // N1
+// N2  . =>   // N3
+//.  N3      // N2
+
+
+//All left-left cases and treated the same
+//.  N1
+// N3  . =>  N3
+//N2 .      N2 N1
+
+
+//Right-left convert to Right-right
+// N1           // N1
+//.   N2    => //   N3
+//.  N3  .    //     N2
+
+
+//All right-right cases and treated the same 
+// N1
+//.  N2   =>    N2
+//. . N3      N1  N3
+
+
+            
+
+            
