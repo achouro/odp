@@ -1,0 +1,176 @@
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width:100vw;
+    height:100vh;
+    padding:0 auto;
+    margin:0 auto;
+    display:flex; justify-content: center;
+    background: rgb(67, 67, 193);
+}
+.whole{
+    margin:0;
+    padding:0;
+}
+.info{
+
+    height: 20vh;
+    width: 70vw;
+    padding:0;
+    margin:0;
+    background: rgb(67, 67, 193);
+    text-align: center;
+    overflow: hidden;
+}
+
+
+h3{
+        font-size:1.2rem;
+        padding:0vh 1vw;
+        margin:0;
+        color:white;
+        white-space:nowrap;
+}
+
+.top .background, .top .message{
+    padding:1vh auto;
+}
+h1{ 
+    color:rgb(67, 67, 193);
+    font-size:1.7rem;
+    padding:1vh 1vw;
+    margin:1vh auto;
+    background-color: silver;
+    border-radius:3vh;
+    white-space:nowrap;
+}
+
+
+span.o, span.r{
+    color:silver;
+}
+
+.info.top{
+    white-space:nowrap;
+    height:10vh;
+    overflow:hidden;
+}
+
+.info .players{
+    
+    height:10vh;
+    
+}
+.players .winner{
+    padding:0; 
+    margin:0 auto;
+    width:15vw;
+    gap:0;
+    display:flex; flex-direction:row; align-items:center; justify-content:center;
+    flex-wrap: nowrap;
+    
+
+    font-weight:700;
+    font-size:1.3rem;
+}
+
+.game_winner, .winner.text{
+    display:flex; flex-direction:row; white-space:nowrap; align-items:center;justify-content:center;
+    margin:0;
+    padding:0;
+    
+}
+
+
+.players .winner img{
+    width:1.5rem;
+    height:1.5rem;
+}
+
+.player.one, .player.two{
+        font-weight:700;
+        font-size:1rem;
+        display:flex; flex-direction:row; white-space:nowrap; align-items:center;justify-content:center;
+        
+
+}
+.board{
+    width:70vw;
+    height: 60vh;
+    background: rgb(85, 107, 179);
+    margin: 0 auto;
+    
+    display:grid;
+    flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    grid-template-columns: repeat(10, 7vw);
+    grid-template-rows: repeat(10,6vh);
+    border:1px solid rgb(84, 61, 61);
+
+}
+.cell{
+    width:7vw; height:6vh;
+    border: 1px solid black;
+
+}
+.cell img{
+    width:min(7vh,7vw); height:min(7vh,7vw);
+}
+
+
+.board button {
+    background-color: transparent;
+    margin:0; padding:0;
+}
+
+
+.players{
+    display:flex; justify-content: space-between; align-items: center;
+    color:white;
+    margin:0;
+    padding:0;
+    
+}
+
+.players .winner{
+    width:10vw;
+    visibility: hidden;
+    color:yellow;
+}
+
+.bottom{
+        height:10vh;
+        width:70vw;
+        display:flex; flex-direction: column; gap:2vh;
+        justify-content: center; align-items: center;
+
+}
+.players, .turn{
+    display:flex; justify-content: space-between; align-items: center;
+    color:white;
+}
+.players img{
+    width:5vh; height:5vh;
+}
+
+.turn .player.turn{
+    color:silver;
+    margin-bottom: 0;
+    margin:0;
+    padding: 0 auto;
+}
+.bottom button{
+    background:silver;
+    
+    padding: 1vh 2vw;
+    border-radius: 4vw;
+    cursor:pointer;
+    margin-top:0;
+
+}
+.bottom{
+    height:10vh;
+    margin:0;
+}

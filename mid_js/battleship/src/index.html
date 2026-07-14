@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Battleship</title>
+</head>
+<body>
+    <div class="whole">
+        <div class="info">
+            <div class="top">
+                <div class="background">
+                    <h1 class="banner">Battleship</h1>
+                </div>
+                <div class=message><h3>Who Wins The Battle?</h3></div>
+                
+            </div>
+            <div class="players">
+                <div class="player one">
+                    <img src="./images/captain-beard.png">
+                    <div class="text">&nbspPlayer 1: &nbsp</div>
+                    <div class="score one">0</div>
+                    
+                </div>
+
+                <div class="winner">
+                    <img src="./images/firework.png">
+                    <div class="game_winner"></div>
+                    <div class="text">&nbspwins!</div>
+                    <img src="./images/firework.png">
+                </div>
+                
+                <div class="player two">
+                    <div class="score two">0</div>
+                    <div class="text">&nbsp :Player 2&nbsp</div>
+                    <img src="./images/pirate.png">
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="board"></div>
+
+        <div class="bottom">
+            <div class="buttons">
+                <h4><div class="turn">Turn:&nbsp<div class="player turn">Player 1</div></h4>
+
+                <button class="next">Next</button>
+                <button class="reset">Reset</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="board.js" type="module"></script>
+</body>
+</html>
