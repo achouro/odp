@@ -250,6 +250,8 @@ export class Game{
                 ship.player.has_won=true;
 
             }
+
+            
             return true;
         }
         return false;
@@ -274,11 +276,25 @@ export function Controller(){
     const turn_ui=document.querySelector('.player.turn')
     const score_one=document.querySelector('.score.one')
     const score_two=document.querySelector('.score.two')
+    const winner_section_ui=document.querySelector('.players .winner')
+    const winner_ui=document.querySelector('.players .winner .game_winner')
+    const reset=document.querySelector('button.reset')
 
     let game= new Game();
     game.initialise_pieces();
 
     let piece_to_move=null;
+    
+
+    if(reset){
+            reset.onclick=()=>{ 
+                 game= new Game();
+                game.initialise_pieces();
+
+                winner_section_ui.style.visibility='hidden';
+
+                render();}
+        }
 
 
     function render(){
@@ -289,6 +305,12 @@ export function Controller(){
         score_one.innerHTML=game.players["Player 1"].total_capacity;
         score_two.innerHTML=game.players["Player 2"].total_capacity;
 
+
+        if(game.game_over){
+            winner_section_ui.style.visibility='visible';
+            winner_ui.innerHTML=game.players['Player 1'].has_won ? 'Navy' : "Pirates";
+
+        }
                     
             for( let row=0; row<game.board.length; row++){
                 for(let col=0; col<game.board.length; col++ ){
@@ -306,13 +328,22 @@ export function Controller(){
                         let icon=document.createElement("img")
                         icon.src=`images/${ship.name}.png`
                         cell_ui.classList.add(ship.name);
+
+                        const player= (ship.player.name==='Player 1') ? "player_1" : "player_2";
+
+                        cell_ui.classList.add(player)
+
                         cell_ui.appendChild(icon)
+
+                        
                     }
 
                     cell_ui.onclick= ()=> {
                         click_handler(row, col);}
 
-                    board_ui.appendChild(cell_ui)
+                    board_ui.appendChild(cell_ui);
+
+
 
                 }
             }

@@ -140,6 +140,7 @@ span.o, span.r{
     color:yellow;
 }
 
+
 .bottom{
         height:10vh;
         width:70vw;
@@ -153,6 +154,24 @@ span.o, span.r{
 }
 .players img{
     width:5vh; height:5vh;
+}
+
+.cell img{
+    width: 100%;
+    height:100%;
+}
+.cell.player_1 img{
+
+    filter:brightness(1.2);
+
+}
+.cell.player_2 img{
+    /*
+    transform: scalex(-1);
+    transform: scaley(-1);
+    */
+    filter:contrast(70%)
+
 }
 
 .turn .player.turn{
