@@ -116,7 +116,7 @@ div.builder{
     text-wrap: nowrap;
     overflow: hidden;
 
-    width: 45vw;
+    max-width: 45vw;
     height: calc(45* 295/210)vw;
 
 }
@@ -190,8 +190,6 @@ button.download, button.hide{
         width: 100%;
         margin:0; padding: 20px auto;
         background: white; box-shadow:none; border:none;
-
-        font
 
     }
     
