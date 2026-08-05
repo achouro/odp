@@ -41,6 +41,7 @@ form{
 fieldset{
     border-radius: 2vh;
     max-width: 45vw;
+
     
 
 }
@@ -105,6 +106,7 @@ div.builder{
 
 .left{
     display:flex;flex-direction: column; align-items: center;
+
 }
 
 
@@ -196,7 +198,18 @@ button.download, button.hide{
         visibility:visible;
     }
 
-    .preview{
+    .preview {
+        /* Force layout absolute alignment to page edge boundaries */
+        position: absolute;
+        left: 0; 
+        top: 0;
+        
+
+        width: 210mm;
+        height: 297mm;
+        max-width: 210mm;
+        max-height: 297mm;
+
         position:absolute;
         left:0; top:0;
         width: 100%;
