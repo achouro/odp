@@ -1,0 +1,8 @@
+li{
+    list-style-type: none;
+    display: flex; flex-direction: row;
+}
+
+li img{
+    border-radius: 10vh;;
+}

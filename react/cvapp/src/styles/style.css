@@ -1,0 +1,193 @@
+button{
+    width:8vw;
+    height:5vh;
+    border-radius: 4vh;
+    
+}
+
+:root, html{
+    display:flex; flex-direction: column;  align-items:center; justify-content: center;
+    min-height: 100vh;
+
+
+
+}
+.whole_header{
+    
+}
+.whole_header h1, .whole_header h4{
+    margin:1vh auto;
+    margin-top:0;
+    padding-top:0.5vh;
+}
+body{
+    width:100vw;
+}
+
+
+section{
+    display:flex; flex-direction: column; 
+}
+
+section .one-part {
+    display:flex; flex-direction: row;  align-items:top;  justify-content: space-between;
+}
+
+
+form{
+    width:45vw;
+    padding:4vh auto;
+    display:flex; flex-direction: column; align-items:center;
+}
+
+fieldset{
+    border-radius: 2vh;
+    max-width: 45vw;
+    
+
+}
+
+input, textarea{
+    width: 50%;
+}
+
+div.button{
+    display:flex; flex-direction: row;  align-items:center;  justify-content: center;
+}
+
+div.builder{
+    display:flex;flex-direction: column; align-items: center;
+}
+
+.container{
+    width:100%;
+}
+.container.split_screen{
+    display:flex;flex-direction: row; justify-content: space-between; 
+    max-width: 100vw;
+    padding:1vh 2.5vw;
+    margin-top:1vh;
+
+}
+.container.split_screen .builder{
+    width:45vw;
+    height:80vh;
+    margin:0;
+
+}
+
+.container.split_screen .form{
+    width:45vw;
+    margin:0;
+    padding:0; 
+
+}
+.container.split_screen form fieldset{
+    max-height:75vh;
+
+    overflow: scroll;
+}
+.container.split_screen .right {
+    width:45vw;
+    padding: 0;
+    display:flex;flex-direction: column; align-items: center;
+
+
+}
+.container.split_screen .left{
+    width:45vw;
+    display:flex;flex-direction: column; align-items: center;
+    margin:0;
+    padding:0;
+
+
+
+}
+
+.left{
+    display:flex;flex-direction: column; align-items: center;
+}
+
+
+.preview{
+    border:2px black solid;
+    border-radius: 3vh;
+    display: flex; flex-direction: column; align-items: center;  justify-content: space-between;
+    
+    text-wrap: nowrap;
+    overflow: hidden;
+
+    width: 45vw;
+    height: calc(45* (297/210) )vw;
+
+}
+
+.preview .header{
+    display: flex; flex-direction: column; align-items: center;
+    
+
+
+}
+.preview .footer .sub{
+    display: flex; flex-direction: row; justify-content: end;
+    margin-bottom: 2vh;
+    font-size: small;
+    gap:5px;
+}
+
+.preview .work, .preview .education{
+    min-height: 20vh;
+}
+ .preview .dates{
+    display: flex; flex-direction: row;
+}
+
+.preview h3{
+    color: green;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.preview .education, .preview .work{
+    border:1px sloid black;
+}
+
+.preview .body{
+    height: 85%;
+    width:80%;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+button{
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+button.download, button.hide{
+    margin-top: 1vh;
+
+}
+
+@media print{
+    @page{ margin:0;}
+    body *{ 
+        visibility: hidden;
+
+    }
+
+    .preview, .preview *{
+        visibility:visible;
+    }
+
+    .preview{
+        position:absolute;
+        left:0; top:0;
+        width: 100%;
+        margin:0; padding: 20px auto;
+        background: white; box-shadow:none; border:none;
+
+    }
+    
+
+}
+
