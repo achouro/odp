@@ -187,10 +187,10 @@ export function Add_details(){
                 <div className="preview">
                    
                     <div className='header'>
-                        <div className='name'><h2>{person.name}</h2></div>
+                        <div className='name'>{person.name}</div>
                          
                         <div className='title'>
-                            {person.work.title}
+                            {person.work && person.work.length>0 ? person.work[0].title : ""}
                         </div>
                     </div>
                     <div className="body">
