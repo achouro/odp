@@ -1,0 +1,72 @@
+body {
+  background-color: rgba(165, 122, 42, 0.833);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.App {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+h1{
+  color:white;
+}
+
+.scores{
+  font-size: 1.2rem;
+  display: flex; flex-direction: row;  justify-content: center;
+  gap:10px;
+
+}
+
+.message{
+  font-size: 1.2rem;
+  margin:5px auto;
+  color: yellow;
+}
+
+.cards{
+  display:grid;
+  
+  grid-template-columns: repeat(3, 1fr);
+  gap:20px;
+  margin-top: 5px;
+}
+.card{
+  background:grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px;
+  cursor:pointer;
+  transition: transform 0.2s ease-in;
+  max-height: 20vh;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  border-color: grey;
+}
+
+.card img{
+  width:100%;
+  height:120px;
+  object-fit: cover;
+  border-radius: 5px;
+
+}
+
+.card p{
+  margin:10px 0;
+  font-size: 1rem;
+}
