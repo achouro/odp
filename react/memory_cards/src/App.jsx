@@ -1,20 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-
-const initial_cards=[{ id: 1, name: 'Charizard', img: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=200' },
-  { id: 2, name: 'Pikachu', img: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=200' },
-  { id: 3, name: 'Bulbasaur', img: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200' },
-  { id: 4, name: 'Squirtle', img: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200' },
-  { id: 5, name: 'Jigglypuff', img: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=200' },
-  { id: 6, name: 'Gengar', img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200' },
-  { id: 7, name: 'Snorlax', img: 'https://images.unsplash.com/photo-1563245372-f21724e3846d?w=200' },
-  { id: 8, name: 'Mewtwo', img: 'https://images.unsplash.com/photo-1614027164847-1b28feb1df6c?w=200' },
-  { id: 9, name: 'Eevee', img: 'https://images.unsplash.com/photo-1535223289827-42f1e9919769?w=200' }, ]
+import {characters} from './pinyin.jsx'
 
 
 export default function App() {
 
-  const [cards, set_cards] = useState(initial_cards)
+  const [cards, set_cards] = useState([])
 
   const [score,set_score]=useState(0)
   const [best_score,set_best_score]=useState(0)
@@ -22,7 +13,37 @@ export default function App() {
 
   const [clicked, set_clicked]=useState([])
 
+  const [loading, set_loading]=useState(false)
+  const [number_of_cards, set_number_of_cards]=useState(9)
 
+  useEffect(()=>{
+
+    //const ids=Array.from({length:number_of_cards}, ()=>(Math.floor(Math.random()*206)))
+
+    async function load_data(){
+      set_loading(true)
+      try{
+
+        const data= await Promise.resolve(characters)
+
+        const cards=[...data].sort(()=>(Math.random() -0.5))
+                              .slice(0,number_of_cards)
+        
+
+        set_cards(cards);
+        set_loading(false);
+        //set_message("Images Successfully Loaded")
+        
+      }
+      catch(error){
+        set_message("Error Fetching Images")
+        set_loading(false)
+      }
+    }
+
+  load_data();
+
+  },[number_of_cards])
 
   const shuffle=(cards)=>{ 
     return [...cards].sort(()=>(Math.random() -0.5));
@@ -55,10 +76,14 @@ export default function App() {
     
   }
 
+  if (loading) {
+    return <div className="App"><header><h1>Loading Chinese Cards...</h1></header></div>
+  }
+
     return (
       <div className='App'>
         <header>
-          <h1>Memory Cards</h1>
+          <h1>Chinese Memory Cards</h1>
           <div className='scores'>
             <div>Score: {score}</div>
             <div>Best Score: {best_score}</div>
@@ -70,8 +95,8 @@ export default function App() {
           <div className='cards'>
             {cards.map((card)=>(
               <div key={card.id} className='card' onClick={()=>handle_click(card.id)}>
-                <img src={card.img}></img>
-                <p>{card.name}</p>
+                <div className="character">{card.char}</div>
+                <p>{card.english}:-{card.pinyin}</p>
               </div>
 
             ))}
