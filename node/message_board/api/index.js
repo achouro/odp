@@ -3,13 +3,13 @@ const express =require("express")
 const app=express();
 const PORT=3000;
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set("view engine", "ejs")
 
 app.use(express.urlencoded({extended:true}))
-app.use(express.static('public'));
+app.use(express.static('../public'));
 
-const messages=require('./messages.js')
+const messages=require('../messages.js')
 
 app.get('/',(request, response)=>{
 
@@ -40,7 +40,11 @@ app.post('/new',(request, response)=>{
 })
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server is running at http://localhost:${PORT}`);
+    });
+}
+
+
 module.exports=app
