@@ -1,8 +1,17 @@
-
 {
+  "version": 2,
+  "functions": {
+    "app.js": {
+      "maxDuration": 15
+    }
+  },
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/style.css", "dest": "/public/style.css" },
-    { "src": "/(.*)", "dest": "app.js" }
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app.js"
+    }
   ]
 }
