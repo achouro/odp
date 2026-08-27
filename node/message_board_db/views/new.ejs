@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <!-- Links to your single stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="card">
+        <h2>Create a New Message</h2>
+        <form method="POST" action="/new">
+            <div class="form-group">
+                <label>Your Name:</label>
+                <input type="text" name="message_user" required />
+            </div>
+            <div class="form-group">
+                <label>Your Message:</label>
+                <textarea rows="4" name="message_text" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+        <a href="/" class="btn-link">Cancel and Go Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2><%= title %></h2>
+        <a href="/new" class="btn-link">Create New Message</a>
+
+        <% messages.forEach((message) => { %>
+            <div class="card">
+                <h3>👤 <%= message.user %></h3>
+                <p><%= message.text %></p>
+                <small>🕒 <%= message.date.toLocaleString() %></small>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
