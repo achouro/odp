@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | <%= item.name %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card detail-card">
+      <header class="card-header">
+        <h1><%= item.name %></h1>
+        <span class="badge"><%= item.category_name || 'Uncategorized' %></span>
+      </header>
+
+      <div class="card-body">
+        <p class="description">
+          <%= item.description || 'No description available for this item.' %>
+        </p>
+
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="label">Price</span>
+            <span class="value price">$<%= Number(item.price).toFixed(2) %></span>
+          </div>
+          <div class="meta-item">
+            <span class="label">In Stock</span>
+            <span class="value"><%= item.stock %> units</span>
+          </div>
+        </div>
+      </div>
+
+      <footer class="card-actions actions">
+        <a href="/items/<%= item.id %>/edit" class="btn btn-secondary">Edit Item</a>
+        <a href="/items/<%= item.id %>/delete" class="btn btn-danger">Delete Item</a>
+        <a href="/items" class="btn btn-outline">Back to All Items</a>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

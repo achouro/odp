@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<h2><%= title %></h2>
+<div class="grid">
+  <% categories.forEach(category => { %>
+    <div class="card">
+      <h3><%= category.name %></h3>
+      <p><%= category.description %></p>
+      <div class="actions">
+        <a href="/categories/<%= category.id %>" class="btn">View Products</a>
+        <a href="/categories/<%= category.id %>/edit" class="btn btn-secondary">Edit Category</a>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<%- include('../partials/footer') %>

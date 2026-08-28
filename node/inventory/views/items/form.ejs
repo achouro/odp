@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+<h2><%= title %></h2>
+
+<% if (error_message) { %>
+  <div class="alert"><%= error_message %></div>
+<% } %>
+
+<form action="<%= item.id ? '/items/' + item.id + '/edit' : '/items/new' %>" method="POST">
+  <div class="form-group">
+    <label for="name">Item Name</label>
+    <input type="text" id="name" name="name" value="<%= item.name || '' %>" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="3"><%= item.description || '' %></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price ($)</label>
+    <input type="number" id="price" name="price" step="0.01" value="<%= item.price || '' %>" required>
+  </div>
+  <div class="form-group">
+    <label for="stock">Stock Quantity</label>
+    <input type="number" id="stock" name="stock" value="<%= item.stock || '' %>" required>
+  </div>
+  <div class="form-group">
+    <label for="category_id">Category</label>
+    <select id="category_id" name="category_id">
+      <option value="">-- Select Category --</option>
+      <% categories.forEach(cat => { %>
+        <option value="<%= cat.id %>" <%= item.category_id === cat.id ? 'selected' : '' %>><%= cat.name %></option>
+      <% }) %>
+    </select>
+  </div>
+
+  <% if (item.id) { %>
+    <div class="form-group" style="border-top: 1px solid #ddd; padding-top: 15px;">
+      <label for="admin_password" style="color: #d9534f;">Admin Password Required to Save Changes</label>
+      <input type="password" id="admin_password" name="admin_password" required placeholder="Enter admin password">
+    </div>
+  <% } %>
+
+  <button type="submit" class="btn">Save Item</button>
+  <a href="/items" class="btn btn-secondary">Cancel</a>
+</form>
+<%- include('../partials/footer') %>

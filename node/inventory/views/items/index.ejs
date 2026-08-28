@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h2><%= title %></h2>
+
+<% if (!items || items.length === 0) { %>
+  <p>No items found.</p>
+<% } else { %>
+  <div class="grid">
+    <% items.forEach(function(item) { %>
+      <div class="card">
+        <h3><%= item.name %></h3>
+        <p><%= item.description %></p>
+        <p><strong>Price:</strong> $<%= item.price %></p>
+        <p><strong>Stock:</strong> <%= item.stock %></p>
+        <p><strong>Category:</strong> <%= item.category_name || 'Uncategorized' %></p>
+        <div class="actions">
+          <a href='/items/<%= item.id %>' class="btn">View</a>
+          <a href='/items/<%= item.id %>/edit' class="btn btn-secondary">Edit</a>
+
+        </div>
+      </div>
+    <% }); %>
+  </div>
+<% } %>
+
+<%- include('../partials/footer') %>
