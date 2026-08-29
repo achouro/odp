@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+</head>
+<body style="display:flex; flex-direction: column; align-items:center; justify-content:center;">
+  <% if (locals.user) {%>
+    <h1>WELCOME BACK <%= user.username %></h1>
+    <a href="/logout">LOG OUT</a>
+  <% } else { %>
+    <h1>Please log in</h1>
+    <form action="/login" method="POST">
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="username" type="text" />
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" />
+      <button type="submit">Log In</button>
+      <a href="/sign_up">Signup</a>
+    </form>
+  <%}%>
+</body>
+</html>
+
