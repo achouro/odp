@@ -18,7 +18,7 @@ const allowed_mime_types = [
 
 const upload = multer({
     storage: multer.memoryStorage(),
-    limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+    limits: { fileSize: 4.5 * 1024 * 1024 }, 
     fileFilter: (req, file, cb) => {
         if (!allowed_mime_types.includes(file.mimetype)) {
             return cb(new Error(`Invalid file type: ${file.mimetype}. Only JPG, PNG, PDF, TXT, and ZIP are allowed.`));
