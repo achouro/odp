@@ -1,0 +1,25 @@
+<article style="max-width: 600px; margin: 2rem auto;">
+  <header>
+    <h2>📄 <%= file.name %></h2>
+    <small>Original filename: <code><%= file.originalName %></code></small>
+  </header>
+
+  <p><strong>Size:</strong> <%= (file.size / 1024).toFixed(2) %> KB (<%= file.size %> bytes)</p>
+  <p><strong>MIME Type:</strong> <code><%= file.mimeType %></code></p>
+  <p><strong>Uploaded On:</strong> <%= new Date(file.createdAt).toLocaleString() %></p>
+  <p><strong>Location:</strong> <%= file.folder ? file.folder.name : 'Root Directory' %></p>
+
+  <footer>
+    <div class="grid">
+      <a href="/api/files/<%= file.id %>/download" role="button" target="_blank">Download File</a>
+      
+      <form action="/api/files/<%= file.id %>?_method=DELETE" method="POST" style="margin: 0;">
+        <button type="submit" class="secondary">Delete File</button>
+      </form>
+    </div>
+    
+    <div style="margin-top: 1rem; text-align: center;">
+      <a href="/dashboard<%= file.folderId ? '?folderId=' + file.folderId : '' %>">← Back to Dashboard</a>
+    </div>
+  </footer>
+</article>

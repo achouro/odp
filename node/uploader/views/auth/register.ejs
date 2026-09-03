@@ -1,0 +1,25 @@
+<article style="max-width: 450px; margin: 2rem auto;">
+  <h2>Create Account</h2>
+  
+  <% if (locals.error) { %>
+    <p style="color: var(--del-color);"><%= error %></p>
+  <% } %>
+
+  <form action="/auth/register" method="POST">
+    <label for="username">
+      Username
+      <input type="text" id="username" name="username" required minlength="3">
+    </label>
+
+    <label for="password">
+      Password
+      <input type="password" id="password" name="password" required minlength="6">
+    </label>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <footer style="text-align: center;">
+    <small>Already have an account? <a href="/login">Login here</a></small>
+  </footer>
+</article>

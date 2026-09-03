@@ -1,0 +1,97 @@
+<div class="grid">
+  <!-- Create Folder Form -->
+  <article>
+    <h3>New Folder</h3>
+    <form action="/folders" method="POST">
+      <label for="folder_name">Folder Name</label>
+      <input type="text" id="folder_name" name="name" placeholder="e.g. Documents" required>
+      <button type="submit">Create Folder</button>
+    </form>
+  </article>
+
+  <!-- Upload File Form -->
+  <article>
+    <h3>Upload File</h3>
+    <form action="/files/upload" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="folder_id" value="<%= current_folder ? current_folder.id : '' %>">
+      
+      <label for="custom_name">Display Name (Optional)</label>
+      <input type="text" id="custom_name" name="custom_name" placeholder="My File">
+
+      <label for="file">Choose File (Max 10MB)</label>
+      <input type="file" id="file" name="file" required>
+
+      <button type="submit">Upload to Cloud</button>
+    </form>
+  </article>
+</div>
+
+<hr>
+
+<header>
+  <h2>
+    <a href="/dashboard">Root</a>
+    <% if (current_folder) { %>
+      / <%= current_folder.name %>
+    <% } %>
+  </h2>
+</header>
+
+<section>
+  <h3>Folders</h3>
+  <% if (folders && folders.length > 0) { %>
+    <div class="grid">
+      <% folders.forEach(folder => { %>
+        <article style="padding: 1rem;">
+          <header style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+            <strong>📁 <a href="/dashboard?folder_id=<%= folder.id %>"><%= folder.name %></a></strong>
+            
+            <form action="/folders/<%= folder.id %>?_method=DELETE" method="POST" style="margin: 0;">
+              <button type="submit" class="secondary outline" style="padding: 2px 8px; font-size: 0.8rem;">Delete</button>
+            </form>
+          </header>
+        </article>
+      <% }) %>
+    </div>
+  <% } else { %>
+    <p><em>No subfolders here.</em></p>
+  <% } %>
+</section>
+
+<section style="margin-top: 2rem;">
+  <h3>Files</h3>
+  <% if (files && files.length > 0) { %>
+    <figure>
+      <table role="grid">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Size</th>
+            <th scope="col">Type</th>
+            <th scope="col">Uploaded</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% files.forEach(file => { %>
+            <tr>
+              <td>📄 <%= file.name %></td>
+              <td><%= (file.size / 1024).toFixed(1) %> KB</td>
+              <td><code><%= file.mime_type %></code></td>
+              <td><%= new Date(file.createdAt).toLocaleDateString() %></td> <!-- Fixed: createdAt -->
+              <td style="display: flex; gap: 0.5rem;">
+                <a href="/files/<%= file.id %>/download" role="button" class="contrast outline" style="height: 30px; padding: 2px 8px; font-size: 0.8rem; margin-top:0; display:flex; justify-content: center;">Download</a>
+                
+                <form action="/files/<%= file.id %>?_method=DELETE" method="POST" style="margin: 0;">
+                  <button type="submit" class="secondary outline" style="height: 30px; padding: 2px 8px; font-size: 0.8rem;">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </figure>
+  <% } else { %>
+    <p><em>No files uploaded in this location.</em></p>
+  <% } %>
+</section>

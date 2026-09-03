@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'File Uploader' %></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body>
+  <nav class="container">
+    <ul>
+      <li><strong><a href="/dashboard">📁 FileVault</a></strong></li>
+    </ul>
+    <ul>
+      <% if (locals.user) { %>
+        <li><span>Welcome, <%= user.username %></span></li>
+        <li>
+          <form action="/auth/logout" method="POST" style="margin: 0;">
+            <button type="submit" class="secondary outline" style="padding: 4px 12px;">Logout</button>
+          </form>
+        </li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/auth/register" role="button">Register</a></li>
+      <% } %>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <%- body %>
+  </main>
+</body>
+</html>
