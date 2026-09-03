@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const prisma = require('./config/database');
 const initialise_passport = require('./config/passport');
 
+const path = require('path');
 const authentication_routes = require('./routes/authentication_routes');
 const folder_routes = require('./routes/folder_routes');
 const file_routes = require('./routes/file_routes');
@@ -37,6 +38,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 app.use(express_layouts);
+app.set('layout', 'layouts/main');
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
