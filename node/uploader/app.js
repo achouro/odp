@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const { PrismaSessionStore } = require('@quixo3/prisma-session-store');
-const methodOverride = require('method-override'); // Added for DELETE/PUT forms
+const methodOverride = require('method-override');
 
 const prisma = require('./config/database');
 const initialise_passport = require('./config/passport');
@@ -15,20 +15,26 @@ const file_routes = require('./routes/file_routes');
 const express_layouts = require('express-ejs-layouts');
 
 const express_session = session({
+    name: 'connect.sid',
     secret: process.env.SESSION_SECRET,
     resave: false, 
     saveUninitialized: false, 
-    cookie: { maxAge: 1 * 24 * 60 * 60 * 1000 },
+    cookie: { 
+        maxAge: 24 * 60 * 60 * 1000,
+        secure: process.env.NODE_ENV === 'production', 
+        sameSite: 'lax'
+    },
     store: new PrismaSessionStore(prisma, { checkPeriod: 2 * 60 * 1000, dbRecordIdIsSessionId: true })
 });
 
 const app = express();
+app.set('trust proxy', 1);
 
 initialise_passport(passport);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method')); // Enables ?_method=DELETE or ?_method=PUT in HTML forms
+app.use(methodOverride('_method'));
 
 app.use(express_layouts);
 app.set('layout', 'layouts/main');
@@ -46,14 +52,14 @@ app.use((req, res, next) => {
 
 app.get('/', (request, response) => {
     if (request.isAuthenticated()) {
-        return response.redirect('/dashboard');
+        return response.redirect('/dashboard'); 
     }
-    return response.redirect('/auth/login');
+    return response.render('auth/login'); 
 });
 
-// Mounted at root so GET /dashboard and folder endpoints resolve correctly
-app.use('/', folder_routes); 
+// CRITICAL FIX: Mount /auth BEFORE root folder_routes so auth pages aren't blocked
 app.use('/auth', authentication_routes);
+app.use('/', folder_routes); 
 app.use('/files', file_routes);
 
 app.get('/login', (req, res) => res.redirect('/auth/login'));
@@ -66,4 +72,4 @@ if (process.env.NODE_ENV !== 'production') {
     });
 }
 
-module.exports=app;
+module.exports = app;
