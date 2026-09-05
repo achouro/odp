@@ -1,3 +1,4 @@
+/*
 function update_nav() {
   const auth_nav = document.getElementById('auth_nav');
   const dashboard_btn = document.getElementById('dashboard_btn');
@@ -13,6 +14,27 @@ function update_nav() {
     auth_nav.innerHTML = `<button onclick="show_view('login')">Login</button><button onclick="show_view('signup')">Signup</button>`;
     dashboard_btn.classList.add('hidden');
   }
+}
+*/
+
+function update_nav() {
+    const token = localStorage.getItem('token');
+    const nav_container = document.getElementById('nav-container') || document.querySelector('nav');
+
+    // Guard clause: Exit if the nav element doesn't exist on the current page
+    if (!nav_container) return;
+
+    if (token) {
+        nav_container.innerHTML = `
+            <a href="/dashboard.html">Dashboard</a>
+            <button id="logout-btn">Logout</button>
+        `;
+    } else {
+        nav_container.innerHTML = `
+            <a href="/login.html">Login</a>
+            <a href="/signup.html">Signup</a>
+        `;
+    }
 }
 
 function logout() {

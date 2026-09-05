@@ -1,0 +1,11 @@
+{
+  "name": "blog_client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve public -l 5500"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

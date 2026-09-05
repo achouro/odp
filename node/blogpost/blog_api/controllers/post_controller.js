@@ -19,32 +19,31 @@ const get_posts = async (req, res) => {
 };
 
 const get_post_by_id = async (req, res) => {
-  try {
-    const post_id = parseInt(req.params.post_id);
-    const post = await prisma.post.findUnique({
-      where: { id: post_id },
-      include: {
-        author: { select: { username: true } },
-        comments: {
-          include: { author: { select: { username: true } } },
-          orderBy: { created_at: 'desc' }
+    try {
+        const postId = parseInt(req.params.id, 10);
+        if (isNaN(postId)) {
+            return res.status(400).json({ error: 'Invalid post ID format' });
         }
-      }
-    });
 
-    if (!post) {
-      return res.status(404).json({ error: 'Post not found' });
+        const post = await prisma.post.findUnique({
+            where: { id: postId },
+            include: { 
+                author: { select: { username: true } },
+                comments: { include: { author: { select: { username: true } } } }
+            }
+        });
+
+        if (!post) {
+            return res.status(404).json({ error: 'Post not found' });
+        }
+
+        res.json(post);
+    } catch (err) {
+        console.error('Error fetching single post:', err);
+        res.status(500).json({ error: 'Internal server error' });
     }
-
-    if (!post.is_published && (!req.user || !req.user.is_author)) {
-      return res.status(403).json({ error: 'Unauthorized to view unpublished post' });
-    }
-
-    return res.json(post);
-  } catch (error) {
-    return res.status(500).json({ error: 'Internal server error' });
-  }
 };
+
 
 const create_post = async (req, res) => {
   try {
