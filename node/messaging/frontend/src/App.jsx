@@ -4,6 +4,37 @@ import UseList from './components/use_list';
 import ChatBox from './components/chat_box';
 import '../App.css';
 
+// Reusable avatar component with emoji fallback
+function AvatarWithFallback({ src, alt, style }) {
+  const [imgError, setImgError] = useState(false);
+
+  if (!src || imgError) {
+    return (
+      <div 
+        style={{ 
+          ...style, 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          backgroundColor: '#e4e6eb', 
+          fontSize: `${(style.width ? parseInt(style.width) : 28) * 0.5}px` 
+        }}
+      >
+        👤
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt} 
+      onError={() => setImgError(true)} 
+      style={style} 
+    />
+  );
+}
+
 export default function App() {
   const [conversations, setConversations] = useState([]);
   const [active_conversation_id, setActiveConversationId] = useState(null);
@@ -95,7 +126,11 @@ export default function App() {
       <div className="sidebar">
         <div className="sidebar-header" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', padding: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0 }}>
-            <img src={current_user.profilePicture} alt="" style={{ width: '28px', height: '28px', borderRadius: '50%' }} />
+            <AvatarWithFallback 
+              src={current_user.profilePicture} 
+              alt="" 
+              style={{ width: '28px', height: '28px', borderRadius: '50%' }} 
+            />
             <span className="sidebar-username" style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontWeight: 'bold' }}>
               {current_user.username}
             </span>
@@ -139,8 +174,8 @@ export default function App() {
                     className={`conv-item ${active_conversation_id === conv.id ? 'active' : ''}`}
                     style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 12px', cursor: 'pointer', borderBottom: '1px solid #f0f2f5' }}
                   >
-                    <img 
-                      src={conv.recipient_picture || 'https://api.dicebear.com/7.x/critters/svg?seed=fallback'} 
+                    <AvatarWithFallback 
+                      src={conv.recipient_picture} 
                       alt="" 
                       className="conv-avatar" 
                       style={{ width: '36px', height: '36px', borderRadius: '50%' }}

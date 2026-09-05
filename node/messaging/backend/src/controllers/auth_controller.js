@@ -17,7 +17,7 @@ async function signup(req, res) {
     }
 
     const passwordHash = await bcrypt.hash(password, 10);
-    const profilePicture = `https://api.dicebear.com/7.x/avataaars/svg?seed=${username}`;
+    const profilePicture = '/avatars/default-1.png';
 
     const user = await prisma.user.create({
       data: { username, email, passwordHash, profilePicture }
