@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog App</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Blog Platform</h1>
+    <div id="auth_nav">
+      <button onclick="show_view('login')">Login</button>
+      <button onclick="show_view('signup')">Signup</button>
+    </div>
+  </header>
+
+  <main>
+    <div style="margin-bottom: 20px;">
+      <button onclick="load_posts()">Home (Posts)</button>
+      <button id="dashboard_btn" class="hidden" onclick="load_dashboard()">Author Dashboard</button>
+    </div>
+
+    <div id="status_msg" style="color: green; margin-bottom: 10px;"></div>
+    <div id="app_content"></div>
+  </main>
+
+  <script src="../src/js/api.js"></script>
+  <script src="../src/js/auth.js"></script>
+  <script src="../src/js/comments.js"></script>
+  <script src="../src/js/posts.js"></script>
+  <script src="../src/js/dashboard.js"></script>
+  <script src="../src/js/app.js"></script>
+</body>
+</html>
