@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+nav {
+  background-color: #ffffff;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.post-card, .user-row {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+.post-header, .user-info, .profile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.avatar-sm { width: 40px; height: 40px; border-radius: 50%; }
+.avatar-xs { width: 25px; height: 25px; border-radius: 50%; }
+.avatar-lg { width: 80px; height: 80px; border-radius: 50%; }
+.timestamp { font-size: 0.8rem; color: #888; }
+.comment { font-size: 0.9rem; margin-top: 5px; display: flex; align-items: center; gap: 5px; }
+.btn-follow { background-color: #28a745; width: auto; padding: 5px 15px; }
+.btn-unfollow { background-color: #dc3545; width: auto; padding: 5px 15px; }
+.btn-pending { background-color: #ffc107; color: black; width: auto; padding: 5px 15px; }
